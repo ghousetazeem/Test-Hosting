@@ -5,7 +5,7 @@ import {
   Typography,
 } from "@material-tailwind/react";
 import { Link } from "react-router-dom";
-import { createUserWithEmailAndPassword } from "firebase/auth";
+import { createUserWithEmailAndPassword, GoogleAuthProvider, signInWithPopup } from "firebase/auth";
 import { auth, db } from "../auth/firebase";
 import { setDoc, doc } from "firebase/firestore";
 import { toast } from "react-toastify";

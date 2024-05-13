@@ -75,21 +75,26 @@ function PricingCard({ title, desc, price, options }) {
 function Pricing() {
     const cards = [
         {
-            title: "starter",
-            desc: "Free access for 2 members",
-            price: ["$", "129", "year"],
+            title: "Basic",
+            price: ["€", "80", "month"],
             options: [
                 {
                     icon: (
                         <CheckCircleIcon className="h-5 w-5 text-blue-gray-900" />
                     ),
-                    info: "Complete documentation",
+                    info: "Quick",
                 },
                 {
                     icon: (
                         <CheckCircleIcon className="h-5 w-5 text-blue-gray-900" />
                     ),
-                    info: "Working materials in Sketch",
+                    info: "Efficient",
+                },
+                {
+                    icon: (
+                        <CheckCircleIcon className="h-5 w-5 text-blue-gray-900" />
+                    ),
+                    info: "Accuarte",
                 },
                 {
                     icon: (
@@ -98,7 +103,7 @@ function Pricing() {
                             className="h-5 w-5 text-blue-gray-900"
                         />
                     ),
-                    info: "Integration help",
+                    info: "Advanced And Dedicated",
                 },
                 {
                     icon: (
@@ -107,7 +112,7 @@ function Pricing() {
                             className="h-5 w-5 text-blue-gray-900"
                         />
                     ),
-                    info: "40GB Cloud storage",
+                    info: "24/7 Support",
                 },
                 {
                     icon: (
@@ -121,39 +126,41 @@ function Pricing() {
             ],
         },
         {
-            title: "premium",
-            desc: "Free access for 30 members",
-            price: ["$", "299", "year"],
+            title: "Pro",
+            price: ["€", "100", "month"],
             options: [
                 {
                     icon: (
                         <CheckCircleIcon className="h-5 w-5 text-blue-gray-900" />
                     ),
-                    info: "Complete documentation",
+                    info: "Quick",
                 },
                 {
                     icon: (
                         <CheckCircleIcon className="h-5 w-5 text-blue-gray-900" />
                     ),
-                    info: "Working materials in Sketch",
+                    info: "Efficient",
                 },
                 {
                     icon: (
-                        <CheckCircleIcon
+                        <CheckCircleIcon className="h-5 w-5 text-blue-gray-900" />
+                    ),
+                    info: "Accuarte",
+                },
+                {
+                    icon: (
+                        <CheckCircleIcon className="h-5 w-5 text-blue-gray-900" />
+                    ),
+                    info: "Advanced And Dedicated",
+                },
+                {
+                    icon: (
+                        <MinusCircleIcon
                             strokeWidth={2.5}
                             className="h-5 w-5 text-blue-gray-900"
                         />
                     ),
-                    info: "Integration help",
-                },
-                {
-                    icon: (
-                        <CheckCircleIcon
-                            strokeWidth={2.5}
-                            className="h-5 w-5 text-blue-gray-900"
-                        />
-                    ),
-                    info: "40GB Cloud storage",
+                    info: "24/7 Support",
                 },
                 {
                     icon: (
@@ -167,46 +174,42 @@ function Pricing() {
             ],
         },
         {
-            title: "company",
-            desc: "Free access for 200 members",
-            price: ["$", "399", "year"],
+            title: "Premium",
+            price: ["€", "300", "month"],
             options: [
                 {
                     icon: (
                         <CheckCircleIcon className="h-5 w-5 text-blue-gray-900" />
                     ),
-                    info: "Complete documentation",
+                    info: "Quick",
                 },
                 {
                     icon: (
                         <CheckCircleIcon className="h-5 w-5 text-blue-gray-900" />
                     ),
-                    info: "Working materials in Sketch",
+                    info: "Efficient",
                 },
                 {
                     icon: (
-                        <CheckCircleIcon
-                            strokeWidth={2.5}
-                            className="h-5 w-5 text-blue-gray-900"
-                        />
+                        <CheckCircleIcon className="h-5 w-5 text-blue-gray-900" />
                     ),
-                    info: "Integration help",
+                    info: "Accuarte",
                 },
                 {
                     icon: (
-                        <CheckCircleIcon
-                            strokeWidth={2.5}
-                            className="h-5 w-5 text-blue-gray-900"
-                        />
+                        <CheckCircleIcon className="h-5 w-5 text-blue-gray-900" />
                     ),
-                    info: "40GB Cloud storage",
+                    info: "Advanced And Dedicated",
                 },
                 {
                     icon: (
-                        <CheckCircleIcon
-                            strokeWidth={2.5}
-                            className="h-5 w-5 text-blue-gray-900"
-                        />
+                        <CheckCircleIcon className="h-5 w-5 text-blue-gray-900" />
+                    ),
+                    info: "24/7 Support",
+                },
+                {
+                    icon: (
+                        <CheckCircleIcon className="h-5 w-5 text-blue-gray-900" />
                     ),
                     info: "Support team full assist",
                 },

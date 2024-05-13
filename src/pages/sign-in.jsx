@@ -5,14 +5,12 @@ import {
   Typography,
 } from "@material-tailwind/react";
 import { Link } from "react-router-dom";
-import { signInWithEmailAndPassword } from "firebase/auth";
+import { signInWithEmailAndPassword, GoogleAuthProvider, signInWithPopup } from "firebase/auth";
 import { auth } from "../auth/firebase";
 import { db } from "../auth/firebase";
-import { setDoc, doc } from "firebase/firestore";
-import { GoogleAuthProvider } from 'firebase/auth'
+import { setDoc, doc, getDoc } from "firebase/firestore";
 
 export function SignIn() {
-
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [errorMessage, setErrorMessage] = useState("");
@@ -37,16 +35,22 @@ export function SignIn() {
         console.log(result);
         const user = result.user;
         if (result.user) {
-          try {
-            await setDoc(doc(db, "Users", user.uid), {
-              email: user.email,
-              firstName: user.displayName,
-              photo: user.photoURL,
-            });
-            window.location.href = "/dashboard";
-          } catch (error) {
-            console.error("Error writing user data to Firestore:", error);
+          // Check if the user already exists in Firestore
+          const docRef = doc(db, "Users", user.uid);
+          const docSnap = await getDoc(docRef);
+          if (!docSnap.exists()) {
+            // If the user doesn't exist, write their data to Firestore
+            try {
+              await setDoc(docRef, {
+                email: user.email,
+                firstName: user.displayName,
+                photo: user.photoURL,
+              });
+            } catch (error) {
+              console.error("Error writing user data to Firestore:", error);
+            }
           }
+          window.location.href = "/dashboard";
         }
       })
       .catch((error) => {
@@ -103,7 +107,7 @@ export function SignIn() {
             Sign In
           </Button>
           <div className="space-y-4 mt-8">
-            <Button onClick={googleLogin} type="submit" size="lg" color="white" className="flex items-center gap-2 justify-center shadow-md" fullWidth>
+            <Button onClick={googleLogin} type="button" size="lg" color="white" className="flex items-center gap-2 justify-center shadow-md" fullWidth>
               <svg width="17" height="16" viewBox="0 0 17 16" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <g clipPath="url(#clip0_1156_824)">
                   <path d="M16.3442 8.18429C16.3442 7.64047 16.3001 7.09371 16.206 6.55872H8.66016V9.63937H12.9813C12.802 10.6329 12.2258 11.5119 11.3822 12.0704V14.0693H13.9602C15.4741 12.6759 16.3442 10.6182 16.3442 8.18429Z" fill="#4285F4" />
@@ -122,8 +126,6 @@ export function SignIn() {
           </div>
         </form>
 
-
-
         <Typography variant="paragraph" className="text-center text-blue-gray-500 font-medium mt-4">
           Not registered?
           <Link to="/sign-up" className="text-gray-900 ml-1 underline">Create account</Link>
@@ -137,7 +139,6 @@ export function SignIn() {
       </div>
 
     </section>
-
   );
 }
 

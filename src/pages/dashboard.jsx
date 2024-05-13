@@ -43,7 +43,7 @@ function Dashboard() {
         <div className="flex flex-col items-center">
             {userDetails ? (
                 <>
-                    <section className="p-4 md:p-12 text-center">
+                    <section className="p-4 md:p-12 text-center mt-28">
                         <div className="mx-auto container mt-8 md:mt-40">
                             <Typography className="mb-4" variant="h2">Welcome to <span className="text-red-700">KOKO</span> AI</Typography>
                             <div className="flex flex-col items-center">
@@ -62,9 +62,6 @@ function Dashboard() {
                             </div>
                         </div>
                     </section>
-                    {/* <div className="mt-8 md:mt-20 w-full flex justify-center align-middle">
-                        <Pricing />
-                    </div> */}
                 </>
             ) : (
                 <div className="flex justify-center items-center h-screen">

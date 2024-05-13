@@ -114,42 +114,38 @@ export function Home() {
                     className="mb-3 font-bold"
                     color="blue-gray"
                   >
-                    Working with us is a pleasure
+                    About us
                   </Typography>
                   <Typography className="mb-8 font-normal text-blue-gray-500">
-                    Don't let your uses guess by attaching tooltips and popoves to
-                    any element. Just make sure you enable them first via
-                    JavaScript.
+                    koko-AI is a cutting-edge AI receptionist solution based in Helsinki, Finland. Our team of experts is dedicated to providing businesses with innovative and efficient ways to manage their front desk operations. The goal of our business plan is to provide an AI receptionist service that can be accessed by organizations of all sizes.
                     <br />
-                    <br />
-                    The kit comes with three pre-built pages to help you get started
-                    faster. You can change the text and images and you're good to
-                    go. Just make sure you enable them first via JavaScript.
+                    <br /> Our AI receptionist will be able to do jobs including taking phone calls, making appointments, and giving consumer’s information. Our ability to apply AI to enhance the effectiveness and accuracy of our receptionist service, which will save businesses time and money, will be our competitive advantage. We want to lead the AI receptionist market by offering a dependable and effective service.
                   </Typography>
-                  <Button variant="filled">read more</Button>
                 </div>
                 <div className="mx-auto mt-24 flex w-full justify-center px-4 md:w-4/12 lg:mt-0">
                   <Card className="shadow-lg border shadow-gray-500/10 rounded-lg">
                     <CardHeader floated={false} className="relative h-56">
                       <img
                         alt="Card Image"
-                        src="/img/teamwork.png"
+                        src="/img/airec.jpg"
                         className="h-full w-full"
                       />
                     </CardHeader>
                     <CardBody>
-                      <Typography variant="small" color="blue-gray" className="font-normal">Enterprise</Typography>
+                      <Typography variant="small" color="blue-gray" className="font-normal">  Features at a glance</Typography>
                       <Typography
                         variant="h5"
                         color="blue-gray"
                         className="mb-3 mt-2 font-bold"
                       >
-                        Top Notch Services
+                        Features at a glance
                       </Typography>
                       <Typography className="font-normal text-blue-gray-500">
-                        The Arctic Ocean freezes every winter and much of the
-                        sea-ice then thaws every summer, and that process will
-                        continue whatever happens.
+                        <ul>
+                          <li>Experience the Future AI Receptionist.</li>
+                          <li>Efficiently manage your front desk with our AI Receptionist.</li>
+                          <li>Enhance customer experience and streamline operations</li>
+                        </ul>
                       </Typography>
                     </CardBody>
                   </Card>
@@ -165,31 +161,13 @@ export function Home() {
               Complete this form and we will get back to you in 24 hours.
             </PageTitle>
           </div>
-          <form className="mx-auto w-full mt-12 lg:w-5/12">
-            <div className="mb-8 flex gap-8">
-              <Input variant="outlined" size="lg" label="Full Name" />
-              <Input variant="outlined" size="lg" label="Email Address" />
+          <form action="https://formspree.io/f/xyyqlnnn" method="POST" className="mx-auto w-full mt-12 lg:w-5/12">
+            <div className="mb-8 flex gap-8 flex-col">
+              <Input name="name" variant="outlined" size="lg" label="Full Name" />
+              <Input name="email" variant="outlined" size="lg" label="Email Address" />
             </div>
-            <Textarea variant="outlined" size="lg" label="Message" rows={8} />
-            <Checkbox
-              label={
-                <Typography
-                  variant="small"
-                  color="gray"
-                  className="flex items-center font-normal"
-                >
-                  I agree the
-                  <a
-                    href="#"
-                    className="font-medium transition-colors hover:text-gray-900"
-                  >
-                    &nbsp;Terms and Conditions
-                  </a>
-                </Typography>
-              }
-              containerProps={{ className: "-ml-2.5" }}
-            />
-            <Button variant="gradient" size="lg" className="mt-8" fullWidth>
+            <Textarea name="message" variant="outlined" size="lg" label="Message" rows={8} />
+            <Button type="submit" variant="gradient" size="lg" className="mt-8" fullWidth>
               Send Message
             </Button>
           </form>

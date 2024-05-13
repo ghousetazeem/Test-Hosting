@@ -8,7 +8,7 @@ export function Footer({ title, description, socials, menus, copyright }) {
     <footer className="relative px-4 pt-8 pb-6 bg-black pr-10 rounded-tl-2xl rounded-tr-2xl mr-12 ml-12">
       <div>
         <Typography className="text-center text-white" variant="h2" ><span className="text-red-800">KOKO</span> AI</Typography>
-        <Typography className="text-center text-white" variant="h5" >One solution for many Problems</Typography>
+        <Typography className="text-center text-white" variant="h5" >One solution for many problems</Typography>
       </div>
       <div className="container mx-auto">
         <hr className="my-6 border-gray-300" />
