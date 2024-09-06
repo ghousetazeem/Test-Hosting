@@ -64,9 +64,6 @@ function PricingCard({ title, desc, price, options }) {
                         </li>
                     ))}
                 </ul>
-                <Button fullWidth variant="gradient" color="gray">
-                    get started
-                </Button>
             </CardBody>
         </Card>
     );

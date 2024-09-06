@@ -6,6 +6,7 @@ import {
 import { auth, db } from "../auth/firebase";
 import { doc, getDoc } from "firebase/firestore";
 import Pricing from "./pricing";
+import BusinessForm from "./businessForm"
 
 function Dashboard() {
     const [userDetails, setUserDetails] = useState(null);
@@ -44,7 +45,7 @@ function Dashboard() {
             {userDetails ? (
                 <>
                     <section className="p-4 md:p-12 text-center mt-28">
-                        <div className="mx-auto container mt-8 md:mt-40">
+                        <div className="mx-auto container">
                             <Typography className="mb-4" variant="h2">Welcome to <span className="text-red-700">KOKO</span> AI</Typography>
                             <div className="flex flex-col items-center">
                                 <Typography variant="h5">Your email: {userDetails.email}</Typography>
@@ -61,7 +62,9 @@ function Dashboard() {
                                 </div>
                             </div>
                         </div>
+
                     </section>
+                    <BusinessForm />
                 </>
             ) : (
                 <div className="flex justify-center items-center h-screen">

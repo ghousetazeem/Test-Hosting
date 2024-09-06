@@ -1,5 +1,7 @@
 import { Home, Profile, SignIn, SignUp } from "@/pages";
 import Dashboard from "./pages/dashboard";
+import Success from "./pages/success";
+import PaymentCancelled from "./pages/failed";
 
 export const routes = [
   {
@@ -19,11 +21,14 @@ export const routes = [
     path: "/dashboard",
     element: <Dashboard />,
   },
-  // {
-  //   name: "profile",
-  //   path: "/profile",
-  //   element: <Profile />,
-  // },
+  {
+    path: "/success",
+    element: <Success />,
+  },
+  {
+    path: "/cancelled",
+    element: <PaymentCancelled />,
+  },
 ];
 
 export default routes;
