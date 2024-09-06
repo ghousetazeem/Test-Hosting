@@ -6,7 +6,7 @@ const app = express();
 
 // Update the CORS configuration
 app.use(cors({
-    origin: ["http://localhost:5500", "https://test-hosting-5e4n.vercel.app"], // Allow both local and hosted origins
+    origin: "*",
 }));
 
 app.use(express.json());
@@ -40,8 +40,8 @@ app.post('/payment', async (req, res) => {
                     }
                 ],
                 mode: 'payment',
-                success_url: 'http://localhost:5173/success',  // Update this to your client URL later
-                cancel_url: 'http://localhost:5173/cancelled', // Update this to your client URL later
+                success_url: 'https://test-hosting-5e4n.vercel.app/success',
+                cancel_url: 'https://test-hosting-5e4n.vercel.app/cancelled',
             });
         }
 

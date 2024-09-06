@@ -24,7 +24,7 @@ function BusinessForm() {
         // Determine the base URL based on environment
         const baseUrl = window.location.hostname === "localhost"
             ? "http://localhost:3000" // Local backend
-            : "https://your-production-backend-url.com"; // Your hosted backend URL when deployed
+            : "https://test-hosting-eight.vercel.app/"; // Your hosted backend URL when deployed
 
         try {
             let response = await axios.post(`${baseUrl}/payment`);
