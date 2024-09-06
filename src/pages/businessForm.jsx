@@ -21,9 +21,13 @@ function BusinessForm() {
     const form = useRef(); // Move the useRef to the top level
 
     const buyfunction = async () => {
-        // handling the payment
+        // Determine the base URL based on environment
+        const baseUrl = window.location.hostname === "localhost"
+            ? "http://localhost:3000" // Local backend
+            : "https://your-production-backend-url.com"; // Your hosted backend URL when deployed
+
         try {
-            let response = await axios.post('http://localhost:3000/payment');
+            let response = await axios.post(`${baseUrl}/payment`);
             if (response && response.status === 200) {
                 window.location.href = response.data.url;
                 console.log(response.data);
@@ -33,6 +37,7 @@ function BusinessForm() {
             setLoading(false); // Ensure the loading state is reset in case of an error
         }
     };
+
 
     const sendEmail = () => {
         return emailjs
