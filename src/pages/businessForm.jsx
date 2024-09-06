@@ -50,13 +50,8 @@ function BusinessForm() {
     const handleSubmit = (e) => {
         e.preventDefault();
         setLoading(true);
-        sendEmail()
-            .then(() => {
-                return buyfunction();
-            })
-            .finally(() => {
-                setLoading(false);
-            });
+        buyfunction();
+
     };
 
     return (
