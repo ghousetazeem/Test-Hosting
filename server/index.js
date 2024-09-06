@@ -1,6 +1,6 @@
 const express = require('express');
 const cors = require('cors');
-const stripe = require('stripe')('sk_test_51PNDsAP4GjSV2QimtQPskTN0QSbrEZwblH7POmAvJ6lrv7PUq1VMsmmAjK6S2HJAHCrAxmQBmFpY8RRwLej3iIsO00XC8bGMM2');
+const stripe = require('stripe')('sk_test_51PvqcCP1EsRYpQZoB6qrfvZG8jlXgbLEFYmcAhBX5oGDwOKr82vIK4P9Qq8pBXJ8SaLomJuex46NchcDVhvQk2Ki00tWIi0mYB');
 
 const app = express();
 
@@ -30,7 +30,7 @@ app.post('/payment', async (req, res) => {
             var price = await stripe.prices.create({
                 product: `${product.id}`,
                 unit_amount: 100 * 100,
-                currency: 'eur',
+                currency: 'usd',
             });
         }
 
