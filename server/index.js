@@ -6,7 +6,10 @@ const app = express();
 
 // Update the CORS configuration
 app.use(cors({
-    origin: "*",
+    origin: ["http://localhost:5500", "https://test-hosting-5e4n.vercel.app", "https://test-hosting-eight.vercel.app"], // Include both frontend and backend URLs
+    methods: "GET,HEAD,PUT,PATCH,POST,DELETE",  // Allow necessary HTTP methods
+    credentials: true,  // If your request includes cookies or authentication tokens
+    allowedHeaders: "Content-Type,Authorization",  // Allow specific headers
 }));
 
 app.use(express.json());
