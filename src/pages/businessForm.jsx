@@ -23,7 +23,7 @@ function BusinessForm() {
     const buyfunction = async () => {
         // handling the payment
         try {
-            let response = await axios.post('https://test-hosting-5e4n.vercel.app/payment');
+            let response = await axios.post('http://localhost:3000/payment');
             if (response && response.status === 200) {
                 window.location.href = response.data.url;
                 console.log(response.data);

@@ -39,8 +39,8 @@ app.post('/payment', async (req, res) => {
                 }
             ],
             mode: 'payment',
-            success_url: 'https://test-hosting-5e4n.vercel.app/success',
-            cancel_url: 'https://test-hosting-5e4n.vercel.app/cancelled',
+            success_url: 'http://localhost:5173/success',
+            cancel_url: 'http://localhost:5173/cancelled',
         })
     }
     res.json(session)
